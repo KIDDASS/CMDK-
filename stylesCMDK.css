@@ -15,9 +15,6 @@ body {
     cursor: crosshair;
 }
 
-
-
-
 /* =================== INTRO SCREEN STYLES =================== */
 
 .intro-screen {
@@ -31,7 +28,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    background: linear-gradient(135deg, #ff00ea 0%, #1a1a1a 50%, #2c2c2c 100%);
+    background: linear-gradient(135deg, #ff00f2 0%, #1a1a1a 50%, #ff00b3 100%);
     cursor: pointer;
     transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow: hidden;
@@ -55,7 +52,7 @@ body {
     font-weight: 900;
     letter-spacing: clamp(4px, 1vw, 12px);
     text-transform: uppercase;
-    background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff, #e0e0e0);
+    background: linear-gradient(45deg, #ff00b3, #ff00bf, #ff00d4, #ff00bf);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -70,7 +67,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.4), transparent);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -83,7 +80,7 @@ body {
     font-size: clamp(1.2rem, 3vw, 2rem);
     font-weight: 300;
     letter-spacing: clamp(2px, 0.5vw, 6px);
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 0, 170, 0.8);
     text-transform: uppercase;
     margin-bottom: 80px;
     text-align: center;
@@ -93,10 +90,10 @@ body {
 
 .enter-prompt {
     font-size: clamp(1rem, 2.5vw, 1.4rem);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgb(255, 0, 191);
     text-align: center;
     opacity: 0;
-    animation: pulse 2.5s ease-in-out infinite, fadeInUp 1.5s ease 1.5s forwards;
+    animation: fadeIndown 1.5s ease 1.5s forwards, pulse 10s ease-in-out infinite;
     position: relative;
     padding: 20px;
 }
@@ -165,7 +162,36 @@ body {
     animation: glitchFlicker 0.3s infinite;
 }
 
-/* =================== ANIMATIONS =================== */
+body {
+  margin: 0;
+  min-height: 100vh;   /* make sure body is at least full screen */
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;     /* push footer to the very bottom */
+  background: #11111100;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.top-left-btn {
+  position: fixed;     /* stays in place */
+  top: 10px;           /* distance from top */
+  left: 85px;          /* distance from left */
+  z-index: 1000;       /* stays above other elements */
+}
+
+.top-left-btn img {
+  width: 65px;         /* adjust size */
+  height: 65px;
+  cursor: pointer;
+}
+
+/* =================== INTRO ANIMATIONS =================== */
 
 @keyframes shimmer {
     0% { background-position: -300% 0; }
@@ -241,6 +267,9 @@ body {
     transform: translateY(50px);
     transition: all 1s ease;
     pointer-events: none;
+    overflow-y: auto;
+    height: 100vh;
+    padding: 100px 20px 20px;
 }
 
 .main-content.show {
@@ -269,7 +298,7 @@ body {
 }
 
 .audio-controls.show {
-    opacity: 1;
+    opacity: 0;
     transform: translateY(0);
 }
 
@@ -379,19 +408,12 @@ body {
     z-index: 1000;
 }
 
-/* Main Container */
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
 .title {
     text-align: center;
     font-size: 42px;
     margin-bottom: 60px;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
-    background: linear-gradient(45deg, #ffffff, #cccccc);
+    text-shadow: 3px 3px 6px rgb(255, 255, 255);
+    background: linear-gradient(45deg, #ff00b3, rgb(204, 204, 204));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -409,339 +431,219 @@ body {
     background: linear-gradient(90deg, transparent, #ffffff, transparent);
 }
 
-/* Profile Grid */
-.profile-grid {
+/* =================== DISCORD MEMBERS STYLES =================== */
+
+.members-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-.profile-panel {
-    background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
-    border-radius: 25px;
-    padding: 35px 25px;
-    text-align: center;
-    box-shadow: 
-        0 20px 40px rgba(0,0,0,0.4),
-        inset 0 1px 0 rgba(255,255,255,0.2);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.15);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.profile-container {
+    background: rgba(182, 182, 182, 0.26);
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.664);
+    margin: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.514);
 }
 
-.profile-panel::before {
+.profile-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgb(255, 2, 213);
+}
+
+.profile-container::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    transition: left 0.6s ease;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(88, 101, 242, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 9s infinite;
 }
 
-.profile-panel:hover::before {
-    left: 100%;
-}
-
-.profile-panel:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 
-        0 30px 60px rgba(0,0,0,0.5),
-        inset 0 1px 0 rgba(255,255,255,0.3);
-}
-
-.profile-image {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    margin: 0 auto 25px;
+.profile-content {
     position: relative;
-    overflow: hidden;
-    border: 4px solid rgba(255,255,255,0.3);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-}
-
-.profile-image:hover {
-    transform: scale(1.1);
-    border-color: rgba(255,255,255,0.5);
-}
-
-.profile-image img {
+    z-index: 1;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.profile-image:hover img {
-    transform: scale(1.1);
-}
-
-.member-name {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.member-role {
-    font-size: 16px;
-    color: #cccccc;
-    margin-bottom: 20px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.social-links {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-.social-link {
+.avatar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(88, 101, 242, 0.5);
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 4px solid rgba(47, 49, 54, 0.9);
+    background-color: #43b581;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+.status-indicator.online { background-color: #43b581; }
+.status-indicator.idle { background-color: #faa61a; }
+.status-indicator.dnd { background-color: #f04747; }
+.status-indicator.offline { background-color: #747f8d; }
+
+.display-name {
     color: #ffffff;
-    text-decoration: none;
-    padding: 8px 16px;
-    border: 1px solid rgba(255,255,255,0.3);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    word-break: break-word;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 15px;
     border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.username {
+    color: #b9bbbe;
     font-size: 12px;
-    transition: all 0.3s ease;
-    background: rgba(255,255,255,0.1);
+    margin-bottom: 10px;
+    word-break: break-all;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 10px;
+    border-radius: 12px;
     backdrop-filter: blur(10px);
 }
 
-.social-link:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.6);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+/* Loading animation */
+.loading {
+    opacity: 0.6;
 }
 
-/* =================== RESPONSIVE DESIGN =================== */
-
-@media (max-width: 1024px) {
-    .main-logo {
-        font-size: clamp(3rem, 8vw, 8rem);
-        letter-spacing: clamp(3px, 0.8vw, 8px);
-    }
-    
-    .subtitle {
-        font-size: clamp(1rem, 2.5vw, 1.6rem);
-        letter-spacing: clamp(1px, 0.4vw, 4px);
-    }
-    
-    .enter-prompt {
-        font-size: clamp(0.9rem, 2vw, 1.2rem);
-    }
+.loading .avatar {
+    animation: profilePulse 2s infinite;
 }
 
+@keyframes profilePulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-    .header {
-        padding: 15px 20px;
+    body {
+        overflow-y: auto;
     }
-
-    .title {
-        font-size: 32px;
-        margin-bottom: 40px;
+    
+    .main-content {
+        padding: 80px 10px 20px;
     }
-
-    .profile-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
+    
+    .members-container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
         padding: 10px;
     }
 
-    .profile-panel {
-        padding: 25px 20px;
+    .profile-container {
+        width: 220px;
+        height: 220px;
     }
 
+    .status-indicator {
+        width: 25px;
+        height: 25px;
+        bottom: 12px;
+        right: 12px;
+        border-width: 3px;
+    }
+
+    .display-name {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .username {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+    
     .audio-controls {
         right: 20px;
+        top: 15px;
         padding: 8px 12px;
     }
     
-    .audio-toggle {
-        font-size: 10px;
-        padding: 6px 10px;
+    .discord-icon {
+        top: 15px;
+        left: 15px;
     }
-
+    
     .discord-link {
         width: 40px;
         height: 40px;
         padding: 8px;
     }
+}
 
-    .main-logo {
-        font-size: clamp(2.5rem, 12vw, 6rem);
-        letter-spacing: clamp(2px, 1vw, 6px);
-        margin-bottom: 30px;
-    }
-    
-    .subtitle {
-        font-size: clamp(0.9rem, 4vw, 1.3rem);
-        letter-spacing: clamp(1px, 0.5vw, 3px);
-        margin-bottom: 60px;
-    }
-    
-    .enter-prompt {
-        font-size: clamp(0.8rem, 3vw, 1rem);
-        padding: 15px;
-    }
-
-    .logo-container {
-        margin-bottom: 60px;
+@media (min-width: 769px) and (max-width: 1024px) {
+    .members-container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
     }
 }
 
-@media (max-width: 480px) {
-    .audio-controls {
-        right: 15px;
-        top: 15px;
-    }
-    
-    .discord-link {
-        width: 35px;
-        height: 35px;
-        padding: 6px;
+@media (min-width: 1025px) {
+    .members-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .profile-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 5px;
+    .display-name {
+        font-size: 20px;
     }
 
-    .main-logo {
-        font-size: clamp(2rem, 15vw, 4rem);
-        letter-spacing: clamp(1px, 1.5vw, 4px);
-    }
-    
-    .subtitle {
-        font-size: clamp(0.8rem, 5vw, 1rem);
-        letter-spacing: clamp(0.5px, 0.8vw, 2px);
-        margin-bottom: 40px;
-    }
-    
-    .enter-prompt {
-        font-size: clamp(0.75rem, 4vw, 0.9rem);
-        padding: 10px;
-    }
-
-    .logo-container {
-        margin-bottom: 40px;
-    }
-
-    .particles {
-        display: none; /* Hide particles on very small screens for performance */
+    .username {
+        font-size: 14px;
     }
 }
-
-/* =================== SPECIAL EFFECTS =================== */
-
-/* Hover effects for intro screen */
-.intro-screen:hover .main-logo {
-    animation-duration: 2s;
-}
-
-.intro-screen:hover .particles .particle {
-    animation-duration: 4s;
-}
-
-/* Custom scrollbar for main content */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.3);
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Focus styles for accessibility */
-.audio-toggle:focus,
-.social-link:focus,
-.discord-link:focus {
-    outline: 2px solid rgba(255, 255, 255, 0.8);
-    outline-offset: 2px;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    .main-logo {
-        -webkit-text-fill-color: white;
-        text-shadow: 2px 2px 4px black;
-    }
-    
-    .subtitle {
-        color: white;
-    }
-    
-    .enter-prompt {
-        color: white;
-    }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    
-    .particles {
-        display: none;
-    }
-}
-
-/* Print styles */
-@media print {
-    .intro-screen,
-    .audio-controls,
-    .discord-icon {
-        display: none;
-    }
-    
-    .main-content {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-    
-    body {
-        background: white;
-        color: black;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-/* =================== END OF STYLES =================== */
