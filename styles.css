@@ -263,7 +263,7 @@ body {
 /* =================== MAIN CONTENT STYLES =================== */
 
 .main-content {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(50px);
     transition: all 1s ease;
     pointer-events: none;
@@ -469,7 +469,7 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(88, 101, 242, 0.1), transparent);
+    background: linear-gradient(45deg, transparent, rgba(242, 242, 243, 0.1), transparent);
     transform: rotate(45deg);
     animation: shimmer 9s infinite;
 }
@@ -508,7 +508,7 @@ body {
 
 .avatar:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(88, 101, 242, 0.5);
+    box-shadow: 0 0 30px rgb(88, 101, 242);
 }
 
 .status-indicator {
@@ -528,8 +528,9 @@ body {
 .status-indicator.idle { background-color: #faa61a; }
 .status-indicator.dnd { background-color: #f04747; }
 .status-indicator.offline { background-color: #747f8d; }
+
 .display-name {
-    color: #ff00c8;
+    color: #ffffff;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
@@ -555,14 +556,20 @@ body {
     backdrop-filter: blur(10px);
 }
 
-/* Loading animation */
+/* Loading animation (fixed for clear avatars) */
 .loading {
-    opacity: 0.6;
+    opacity: 1; /* keep everything visible */
 }
 
 .loading .avatar {
     animation: profilePulse 2s infinite;
 }
+
+@keyframes profilePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 1; } /* stays solid, no dimming */
+}
+
 
 @keyframes profilePulse {
     0%, 100% { opacity: 0.6; }
@@ -646,5 +653,3 @@ body {
         font-size: 14px;
     }
 }
-
-
