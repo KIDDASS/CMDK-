@@ -1,250 +1,256 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMDK</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Intro Screen -->
-    <div class="intro-screen" id="introScreen">
-        <!-- Animated Particles -->
-        <div class="particles" id="particles"></div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CMDK</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Intro Screen -->
+        <div class="intro-screen" id="introScreen">
+            <!-- Animated Particles -->
+            <div class="particles" id="particles"></div>
+            
+            <!-- Main Logo -->
+            <div class="logo-container">
+                <h1 class="main-logo">CUARZO</h1>
+                <div class="subtitle">MAFIOSO DE KALIDAD</div>
+            </div>
+
+            <!-- Enter Prompt -->
+            <div class="enter-prompt">
+                <p>Press anywhere to enter</p>
+            </div>
+
+            <!-- Glitch Effect Overlay -->
+            <div class="glitch-overlay"></div>
+        </div>
+
+        <!-- Main Website Content -->
+        <div class="main-content" id="mainContent">
+            <!-- Audio Controls -->
+            <div class="audio-controls" id="audioControls">
+                <button id="audioToggle" class="audio-toggle">Music ON</button>
+            </div>
+
+            <!-- Header -->
+            <header class="header">
+                <!-- Empty header for now, Discord icon is positioned absolutely -->
+            </header>
+
+    <h1 class="title">CUARZO MAFIOSO 
+                        DE KALIDAD 
+    </h1>
+    <div class="members-container">
+
+
+    <!-- Member 1 -->
+    <div class="profile-container loading" id="profile-1">
+        <div class="profile-content">
+            <div class="avatar-container">
+                <img class="avatar" alt="Discord Avatar" data-member="1">
+                <div class="status-indicator offline" data-member="1"></div>
+            </div>
+            <div class="display-name" data-member="1">Loading...</div>
+       
+        </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="profile-container loading" id="profile-2">
+        <div class="profile-content">
+            <div class="avatar-container">
+                <img class="avatar" alt="Discord Avatar" data-member="2">
+                <div class="status-indicator offline" data-member="2"></div>
+            </div>
+            <div class="display-name" data-member="2">Loading...</div>
+          
+        </div>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="profile-container loading" id="profile-3">
+        <div class="profile-content">
+            <div class="avatar-container">
+                <img class="avatar" alt="Discord Avatar" data-member="3">
+                <div class="status-indicator offline" data-member="3"></div>
+            </div>
+            <div class="display-name" data-member="3">Loading...</div>
+          
+        </div>
+    </div>
+
+    <!-- Member 4 -->
+    <div class="profile-container loading" id="profile-4">
+        <div class="profile-content">
+            <div class="avatar-container">
+                <img class="avatar" alt="Discord Avatar" data-member="4">
+                <div class="status-indicator offline" data-member="4"></div>
+            </div>
+            <div class="display-name" data-member="4">Loading...</div>
         
-        <!-- Main Logo -->
-        <div class="logo-container">
-            <h1 class="main-logo">CUARZO</h1>
-            <div class="subtitle">MAFIOSO DE KALIDAD</div>
-        </div>
-
-        <!-- Enter Prompt -->
-        <div class="enter-prompt">
-            <p>Press anywhere to enter</p>
-        </div>
-
-        <!-- Glitch Effect Overlay -->
-        <div class="glitch-overlay"></div>
-    </div>
-
-    <!-- Main Website Content -->
-    <div class="main-content" id="mainContent">
-        <!-- Audio Controls -->
-        <div class="audio-controls" id="audioControls">
-            <button id="audioToggle" class="audio-toggle">Music ON</button>
-        </div>
-
-        <!-- Header -->
-        <header class="header">
-            <!-- Empty header for now, Discord icon is positioned absolutely -->
-        </header>
-
-<h1 class="title">CUARZO MAFIOSO 
-                    DE KALIDAD 
-</h1>
-<div class="members-container">
-
-
-<!-- Member 1 -->
-<div class="profile-container loading" id="profile-1">
-    <div class="profile-content">
-        <div class="avatar-container">
-            <img class="avatar" alt="Discord Avatar" data-member="1">
-            <div class="status-indicator offline" data-member="1"></div>
-        </div>
-        <div class="display-name" data-member="1">Loading...</div>
-    </div>
-</div>
-
-<!-- Member 2 -->
-<div class="profile-container loading" id="profile-2">
-    <div class="profile-content">
-        <div class="avatar-container">
-            <img class="avatar" alt="Discord Avatar" data-member="2">
-            <div class="status-indicator offline" data-member="2"></div>
-        </div>
-        <div class="display-name" data-member="2">Loading...</div>
-    </div>
-</div>
-
-<!-- Member 3 -->
-<div class="profile-container loading" id="profile-3">
-    <div class="profile-content">
-        <div class="avatar-container">
-            <img class="avatar" alt="Discord Avatar" data-member="3">
-            <div class="status-indicator offline" data-member="3"></div>
-        </div>
-        <div class="display-name" data-member="3">Loading...</div>
-    </div>
-</div>
-
-<!-- Member 4 -->
-<div class="profile-container loading" id="profile-4">
-    <div class="profile-content">
-        <div class="avatar-container">
-            <img class="avatar" alt="Discord Avatar" data-member="4">
-            <div class="status-indicator offline" data-member="4"></div>
-        </div>
-        <div class="display-name" data-member="4">Loading...</div>
-    </div>
-</div>
-
-<!-- Member 5 -->
-<div class="profile-container loading" id="profile-5">
-    <div class="profile-content">
-        <div class="avatar-container">
-            <img class="avatar" alt="Discord Avatar" data-member="5">
-            <div class="status-indicator offline" data-member="5"></div>
-        </div>
-        <div class="display-name" data-member="5">Loading...</div>
-    </div>
-</div>
-
-<!-- Member 6 -->
-<div class="profile-container loading" id="profile-6">
-    <div class="profile-content">
-        <div class="avatar-container">
-            <img class="avatar" alt="Discord Avatar" data-member="6">
-            <div class="status-indicator offline" data-member="6"></div>
-        </div>
-        <div class="display-name" data-member="6">Loading...</div>
-    </div>
-</div>
-
-<!-- Member 7 -->
-<div class="profile-container loading" id="profile-7">
-    <div class="profile-content">
-        <div class="avatar-container">
-            <img class="avatar" alt="Discord Avatar" data-member="7">
-            <div class="status-indicator offline" data-member="7"></div>
-        </div>
-        <div class="display-name" data-member="7">Loading...</div>
-    </div>
-</div>
-
-
-    <div class="footer">
-  ©KIDD. All Rights Reserved 2025
-</div>
         </div>
     </div>
 
-   <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const introScreen = document.getElementById("introScreen");
-    const mainContent = document.getElementById("mainContent");
-    const audioControls = document.getElementById("audioControls");
-    const discordIcon = document.getElementById("discordIcon");
-    const audioToggle = document.getElementById("audioToggle");
-    const particlesContainer = document.getElementById("particles");
+    <!-- Member 5 -->
+    <div class="profile-container loading" id="profile-5">
+        <div class="profile-content">
+            <div class="avatar-container">
+                <img class="avatar" alt="Discord Avatar" data-member="5">
+                <div class="status-indicator offline" data-member="5"></div>
+            </div>
+            <div class="display-name" data-member="5">Loading...</div>
+   
+        </div>
+    </div>
 
-// 🎶 Background Music
-const bgMusic = new Audio("https://github.com/KIDDASS/CMDK-/raw/main/3ef2-9692-4d3c-b4ad-a72b3eb8a181-VEED.mp3"); // replace with your music link
-bgMusic.loop = true;
-bgMusic.volume = 0.5;
+    <!-- Member 6 -->
+    <div class="profile-container loading" id="profile-6">
+        <div class="profile-content">
+            <div class="avatar-container">
+                <img class="avatar" alt="Discord Avatar" data-member="6">
+                <div class="status-indicator offline" data-member="6"></div>
+            </div>
+            <div class="display-name" data-member="6">Loading...</div>
+      
+        </div>
+    </div>
 
-let musicPlaying = false;
+    <!-- Member 7 -->
+    <div class="profile-container loading" id="profile-7">
+        <div class="profile-content">
+            <div class="avatar-container">
+                <img class="avatar" alt="Discord Avatar" data-member="7">
+                <div class="status-indicator offline" data-member="7"></div>
+            </div>
+            <div class="display-name" data-member="7">Loading...</div>
+    
+        </div>
+    </div>
 
-// Fade out intro on click
-introScreen.addEventListener("click", () => {
-    introScreen.classList.add("fade-out");
 
-    // ✅ Start music on actual user interaction
-    bgMusic.play().then(() => {
-        musicPlaying = true;
-        audioToggle.textContent = "Music OFF";
-    }).catch(err => {
-        console.log("Audio blocked:", err);
-        musicPlaying = false;
-        audioToggle.textContent = "Music ON";
-    });
+        <div class="footer">
+    ©KIDD. All Rights Reserved 2025
+    </div>
+            </div>
+        </div>
 
-    setTimeout(() => {
-        introScreen.style.display = "none";
-        mainContent.classList.add("show");
-        audioControls.classList.add("show");
-        discordIcon.classList.add("show");
-    }, 1200);
-});
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const introScreen = document.getElementById("introScreen");
+        const mainContent = document.getElementById("mainContent");
+        const audioControls = document.getElementById("audioControls");
+        const discordIcon = document.getElementById("discordIcon");
+        const audioToggle = document.getElementById("audioToggle");
+        const particlesContainer = document.getElementById("particles");
 
-// Toggle music
-audioToggle.addEventListener("click", () => {
-    if (musicPlaying) {
-        bgMusic.pause();
-        musicPlaying = false;
-        audioToggle.textContent = "Music ON";
-    } else {
+    // 🎶 Background Music
+    const bgMusic = new Audio("https://github.com/KIDDASS/CMDK-/raw/main/3ef2-9692-4d3c-b4ad-a72b3eb8a181-VEED.mp3"); // replace with your music link
+    bgMusic.loop = true;
+    bgMusic.volume = 0.5;
+
+    let musicPlaying = false;
+
+    // Fade out intro on click
+    introScreen.addEventListener("click", () => {
+        introScreen.classList.add("fade-out");
+
+        // ✅ Start music on actual user interaction
         bgMusic.play().then(() => {
             musicPlaying = true;
             audioToggle.textContent = "Music OFF";
-        }).catch(err => console.log("Error resuming audio:", err));
-    }
-});
-
-
-    // Particle generator
-    function createParticles(count = 40) {
-        for (let i = 0; i < count; i++) {
-            const particle = document.createElement("div");
-            particle.className = "particle";
-            const size = Math.random() * 6 + 2;
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.top = `${Math.random() * 100}%`;
-            particle.style.left = `${Math.random() * 100}%`;
-            particlesContainer.appendChild(particle);
-        }
-    }
-    createParticles();
-
-    // 🔗 Discord user IDs (replace with your members' IDs)
-  const memberIDs = [
-    "387586427074117632", // example user 1
-    "1374956417076953158", // example user 2
-    "1236637593429344307", // example user 3
-    "906782522195709972", // example user 4
-    "1305151344545501274", // example user 5
-    "1401189079022047314", // example user 6
-    "1381988741593174046" // example user 7
-];
-    // Map Lanyard Discord status to CSS class
-    const statusMap = {
-        "online": "online",
-        "idle": "idle",
-        "dnd": "dnd",
-        "offline": "offline"
-    };
-
-    async function loadMembers() {
-        memberIDs.forEach(async (id, index) => {
-            try {
-                const res = await fetch(`https://api.lanyard.rest/v1/users/${id}`);
-                const data = await res.json();
-                if (data.success) {
-                    const user = data.data.discord_user;
-                    const status = data.data.discord_status;
-
-                    document.querySelector(`[data-member="${index+1}"].avatar`).src = 
-                        `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128`;
-                   document.querySelector(`[data-member="${index+1}"].display-name`).textContent = user.username;
-                document.querySelector(`[data-member="${index+1}"].username`).textContent = `@${user.username}`;
-
-                    
-                    const statusEl = document.querySelector(`[data-member="${index+1}"].status-indicator`);
-                    statusEl.className = `status-indicator ${statusMap[status] || "offline"}`;
-                    
-                    document.getElementById(`profile-${index+1}`).classList.remove("loading");
-                }
-            } catch (err) {
-                console.error("Error fetching Lanyard data:", err);
-            }
+        }).catch(err => {
+            console.log("Audio blocked:", err);
+            musicPlaying = false;
+            audioToggle.textContent = "Music ON";
         });
-    }
 
-    loadMembers();
-});
-</script>
+        setTimeout(() => {
+            introScreen.style.display = "none";
+            mainContent.classList.add("show");
+            audioControls.classList.add("show");
+            discordIcon.classList.add("show");
+        }, 1200);
+    });
 
-</body>
-</html>
+    // Toggle music
+    audioToggle.addEventListener("click", () => {
+        if (musicPlaying) {
+            bgMusic.pause();
+            musicPlaying = false;
+            audioToggle.textContent = "Music ON";
+        } else {
+            bgMusic.play().then(() => {
+                musicPlaying = true;
+                audioToggle.textContent = "Music OFF";
+            }).catch(err => console.log("Error resuming audio:", err));
+        }
+    });
 
+
+        // Particle generator
+        function createParticles(count = 40) {
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement("div");
+                particle.className = "particle";
+                const size = Math.random() * 6 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // 🔗 Discord user IDs (replace with your members' IDs)
+    const memberIDs = [
+        "387586427074117632", // example user 1
+        "1374956417076953158", // example user 2
+        "1236637593429344307", // example user 3
+        "906782522195709972", // example user 4
+        "1305151344545501274", // example user 5
+        "1401189079022047314", // example user 6
+        "1381988741593174046" // example user 7
+    ];
+        // Map Lanyard Discord status to CSS class
+        const statusMap = {
+            "online": "online",
+            "idle": "idle",
+            "dnd": "dnd",
+            "offline": "offline"
+        };
+
+        async function loadMembers() {
+            memberIDs.forEach(async (id, index) => {
+                try {
+                    const res = await fetch(`https://api.lanyard.rest/v1/users/${id}`);
+                    const data = await res.json();
+                    if (data.success) {
+                        const user = data.data.discord_user;
+                        const status = data.data.discord_status;
+
+                        document.querySelector(`[data-member="${index+1}"].avatar`).src = 
+                            `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128`;
+                    document.querySelector(`[data-member="${index+1}"].display-name`).textContent = user.username;
+                    document.querySelector(`[data-member="${index+1}"].username`).textContent = `@${user.username}`;
+
+                        
+                        const statusEl = document.querySelector(`[data-member="${index+1}"].status-indicator`);
+                        statusEl.className = `status-indicator ${statusMap[status] || "offline"}`;
+                        
+                        document.getElementById(`profile-${index+1}`).classList.remove("loading");
+                    }
+                } catch (err) {
+                    console.error("Error fetching Lanyard data:", err);
+                }
+            });
+        }
+
+        loadMembers();
+    });
+    </script>
+
+    </body>
+    </html>
