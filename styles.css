@@ -528,9 +528,8 @@ body {
 .status-indicator.idle { background-color: #faa61a; }
 .status-indicator.dnd { background-color: #f04747; }
 .status-indicator.offline { background-color: #747f8d; }
-
 .display-name {
-    color: #ffffff;
+    color: #ff00c8;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
@@ -647,4 +646,5 @@ body {
         font-size: 14px;
     }
 }
+
 
